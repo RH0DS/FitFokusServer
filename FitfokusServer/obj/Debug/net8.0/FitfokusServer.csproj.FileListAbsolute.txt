@@ -30,3 +30,4 @@ D:\Programmering\Projects\FitFokus\FitfokusServer\FitfokusServer\obj\Debug\net8.
 D:\Programmering\Projects\FitFokus\FitfokusServer\FitfokusServer\obj\Debug\net8.0\FitfokusServer.pdb
 D:\Programmering\Projects\FitFokus\FitfokusServer\FitfokusServer\obj\Debug\net8.0\FitfokusServer.genruntimeconfig.cache
 D:\Programmering\Projects\FitFokus\FitfokusServer\FitfokusServer\obj\Debug\net8.0\ref\FitfokusServer.dll
+D:\Programmering\Projects\FitFokus\FitfokusServer\FitfokusServer\obj\Debug\net8.0\FitfokusServer.sourcelink.json
