@@ -4,6 +4,7 @@
 
 /FitfokusServer/EventLog.txt
 /.vs
+/FitfokusServer.vs
 /.vs/FitfokusServer/FileContentIndex/1192efa5-e69a-46bb-8a44-83a9167346d4.vsidx
 /.vs/FitfokusServer/FileContentIndex/26d448f8-a32d-4400-8c6f-76d670762bbe.vsidx
 /.vs/FitfokusServer/FileContentIndex/373cf2b6-97e3-417e-9311-4d8e43761304.vsidx
@@ -18,3 +19,6 @@
 /.vs/FitfokusServer/v17/.suo
 /.vs/FitfokusServer/v17/DocumentLayout.json
 /.vs/FitfokusServer/DesignTimeBuild/.dtbcache.v2
+FitfokusServer/bin
+.vs
+FitfokusServer/obj

@@ -2,5 +2,6 @@
 
     public class UserResponse
     {
-    }
+    public string? UserResponse1 { get; set; }
+}
 

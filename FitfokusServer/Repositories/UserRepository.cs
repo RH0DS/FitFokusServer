@@ -35,7 +35,7 @@ namespace FitfokusServer.Repositories;
 
     public async Task<UserResponse> GetUser(int id)
     {
-        throw new NotImplementedException();
+        return  new UserResponse() { UserResponse1 = "Hej hej från UserRepo" };
     }
 
     public  Task<bool> Save()

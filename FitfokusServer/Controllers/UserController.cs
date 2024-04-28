@@ -19,17 +19,17 @@ public class UserController : ControllerBase
         _userRepository = userRepository;
     }
 
-
+    // comment to see if CD is working OOB
 
     [HttpGet("{id}")]
     //   [Authorize (Roles ="user, admin, super-admin")  ]
     public async Task<ActionResult<UserResponseDTO>> GetUser(int id)
     {
-      if (!await _userRepository.UsersFound() || !await _userRepository.UserExists(id)){return NotFound("No user with that Id exists");}
+    //  if (!await _userRepository.UsersFound() || !await _userRepository.UserExists(id)){return NotFound("No user with that Id exists");}
 
           var getUser = await _userRepository.GetUser(id);
 
-        var user = new UserResponseDTO();
+        var user = new UserResponseDTO() { DummyResponse = getUser.UserResponse1 };
 
       return Ok (user);
     }
