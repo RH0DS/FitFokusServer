@@ -1,7 +1,7 @@
 ﻿namespace FitfokusServer.Models.DomainObjects.Responses;
 
-    public class UserResponse
-    {
+public class User
+{
     public string? UserResponse1 { get; set; }
 }
 
