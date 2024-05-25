@@ -10,7 +10,7 @@ namespace FitfokusServer.DataBase;
             : base(options)
         {
         }
-    public DbSet<User> Users { get; set; } = default!;
+    public DbSet<UserResponse> Users { get; set; } = default!;
 
     }
 

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitfokusServer", "FitfokusServer\FitfokusServer.csproj", "{E1881C65-8093-439A-8326-6CA2205BA5A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FitfokusServer", "FitfokusServer\FitfokusServer.csproj", "{E1881C65-8093-439A-8326-6CA2205BA5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitFokusServerTests", "TestProject1\FitFokusServerTests.csproj", "{11BB9151-DBA2-4846-A105-CD9805D7C046}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E1881C65-8093-439A-8326-6CA2205BA5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1881C65-8093-439A-8326-6CA2205BA5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1881C65-8093-439A-8326-6CA2205BA5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BB9151-DBA2-4846-A105-CD9805D7C046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BB9151-DBA2-4846-A105-CD9805D7C046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BB9151-DBA2-4846-A105-CD9805D7C046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BB9151-DBA2-4846-A105-CD9805D7C046}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
