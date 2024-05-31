@@ -1,8 +1,11 @@
 using FitfokusServer.DataBase;
 using FitfokusServer.Interfaces;
+using FitfokusServer.Models.DomainObjects.Responses;
 using FitfokusServer.Repositories;
 using FitfokusServer.Services;
+using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,15 +30,15 @@ builder.Services.AddSwaggerGen();
 
 
 var connection = String.Empty;
-//if (builder.Environment.IsDevelopment())
-//{
-//    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
-//    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
-//}
-//else
-//{
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+}
+else
+{
     connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
-//}
+}
 
 builder.Services.AddDbContext<FitFokusDB>(options =>
     options.UseSqlServer(connection));
