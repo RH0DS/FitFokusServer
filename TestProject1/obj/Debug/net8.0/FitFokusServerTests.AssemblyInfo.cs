@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FitFokusServerTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dadb137dcbd166588deb12098e519dc42b9cd7c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fbbc351f60f20f496a5f9bc9b79269ab70876c4")]
 [assembly: System.Reflection.AssemblyProductAttribute("FitFokusServerTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FitFokusServerTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

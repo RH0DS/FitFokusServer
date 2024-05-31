@@ -8,7 +8,7 @@ namespace FitFokusServerTests
         public void ValidateDefaultIdForNewUserResponse()
         {
             // Arrange
-            var user = new UserResponse();
+            var user = new User();
 
             // Act
             var id = user.Id;
@@ -22,7 +22,7 @@ namespace FitFokusServerTests
         public void ValidateEmptyUserNameForNewUserResponse()
         {
             // Arrange
-            var user = new UserResponse();
+            var user = new User();
 
             // Act
             var userName = user.Name;
@@ -36,7 +36,7 @@ namespace FitFokusServerTests
         public void ValidateEmptyEmailForNewUserResponse()
         {
             // Arrange
-            var user = new UserResponse();
+            var user = new User();
 
             // Act
             var email = user.Email;

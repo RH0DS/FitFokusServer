@@ -28,14 +28,14 @@ namespace FitfokusServer.Repositories;
         throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<UserResponse>> GetAllUsers()
+    public async Task<IEnumerable<User>> GetAllUsers()
     {
         throw new NotImplementedException();
     }
 
-    public async Task<UserResponse> GetUser(int id)
+    public async Task<User> GetUser(int id)
     {
-        return  new UserResponse();
+        return  new User();
     }
 
     public  Task<bool> Save()

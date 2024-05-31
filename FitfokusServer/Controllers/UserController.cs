@@ -29,7 +29,7 @@ public class UserController : ControllerBase
 
           var getUser = await _userRepository.GetUser(id);
 
-        var user = new UserResponseDTO() { DummyResponse = getUser.UserResponse1 };
+        var user = new UserResponseDTO(); //{ DummyResponse = getUser.UserResponse1 };
 
       return Ok (user);
     }
