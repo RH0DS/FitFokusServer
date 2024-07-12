@@ -1,4 +1,6 @@
-using FitfokusServer.Models.DomainObjects.Responses;
+
+
+using FitfokusServer.Models.DomainObjects;
 
 namespace FitFokusServerTests
 {
@@ -42,7 +44,7 @@ namespace FitFokusServerTests
             var email = user.Email;
 
             // Assert
-            Assert.Null(email);
+            Assert.Empty(email);
 
         }
     }

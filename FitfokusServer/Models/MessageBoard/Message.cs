@@ -1,8 +1,8 @@
-﻿using FitfokusServer.Models.DomainObjects.Responses;
+﻿using FitfokusServer.Models.DomainObjects;
 
 namespace FitfokusServer.Models.MessageBoard;
 
-    public class Message
+public class Message
     {
         public int Id { get; set; }
         public string Content { get; set; }
