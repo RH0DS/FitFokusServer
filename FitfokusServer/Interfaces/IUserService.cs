@@ -1,9 +1,13 @@
 ﻿
+using FitfokusServer.Models.DTOs.Requests;
 using FitfokusServer.Models.DTOs.Responses;
 
 namespace FitfokusServer.Interfaces;
 
 public interface IUserService
 {
-    Task<UserResponseDTO> GetUserDTO(int id);
+    Task<GetUserResponseDTO> GetUser(GetUserRequestDTO getUserRequest);
+
+    Task<CreateUserResponseDTO> CreateUser(CreateUserRequestDTO createUserRequestDTO);
+
 }
