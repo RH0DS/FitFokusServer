@@ -1,6 +1,5 @@
 using FitfokusServer.DataBase;
 using FitfokusServer.Interfaces;
-using FitfokusServer.Models.DomainObjects.Responses;
 using FitfokusServer.Repositories;
 using FitfokusServer.Services;
 using Microsoft.AspNetCore.Hosting.Server;
@@ -33,7 +32,7 @@ var connection = String.Empty;
 if (builder.Environment.IsDevelopment())
 {
     builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
-    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+    connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
 }
 else
 {

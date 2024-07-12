@@ -1,4 +1,4 @@
-﻿using FitfokusServer.Models.DomainObjects.Responses;
+﻿using FitfokusServer.Models.DomainObjects;
 using FitfokusServer.Models.MessageBoard;
 using Microsoft.EntityFrameworkCore;
 using System;
