@@ -23,30 +23,31 @@ public class UserController : ControllerBase
 
     [HttpGet("{id}")]
     //   [Authorize (Roles ="user, admin, super-admin")  ]
-    public async Task<ActionResult<UserResponseDTO>> GetUser(int id)
+    public async Task<ActionResult<GetUserResponseDTO>> GetUser(int id)
     {
     //  if (!await _userRepository.UsersFound() || !await _userRepository.UserExists(id)){return NotFound("No user with that Id exists");}
 
-          var getUser = await _userRepository.GetUser(id);
+          var getUser = await _userRepository.GetUser(new GetUserRequestDTO { Id = id });
+        
 
-        var user = new UserResponseDTO(); //{ DummyResponse = getUser.UserResponse1 };
+        var user = new GetUserResponseDTO(); //{ DummyResponse = getUser.UserResponse1 };
 
       return Ok (user);
     }
 
 
-    //[HttpPost]
-    //public async Task<ActionResult<UserResponseDTO>> createUser(UserCreateDTO userCreateDTO)
-    //{
+    [HttpPost]
+    public async Task<ActionResult<GetUserResponseDTO>> createUser(CreateUserRequestDTO createUserRequest)
+    {
 
     //    if (await _userRepository.UserEmailExists(userCreateDTO.Email)) { return BadRequest("Email already exists"); }
 
     //    var user = _mapper.Map<User>(userCreateDTO);
 
-    //    await _userRepository.CreateUser(user);
-
-    //    return CreatedAtAction("GetUser", new { id = user.Id }, user);
-    //}
+          var  user =   await _userRepository.CreateUser(createUserRequest);
+    
+        return CreatedAtAction("GetUser", new { id = user.Id }, user);
+    }
 
 
     [HttpDelete("{id}")]
