@@ -1,5 +1,5 @@
 ﻿using System.Numerics;
-using FitfokusServer.Models.MessageBoard;
+using FitfokusServer.Models.DomainObjects.MessageBoard;
 
 namespace FitfokusServer.Models.DomainObjects;
 

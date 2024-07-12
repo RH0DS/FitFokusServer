@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\DomainObjects\Responses\**" />
+    <Content Remove="Models\DomainObjects\Responses\**" />
+    <EmbeddedResource Remove="Models\DomainObjects\Responses\**" />
+    <None Remove="Models\DomainObjects\Responses\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
@@ -23,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Models\DomainObjects\Requests\" />
     <Folder Include="Configuration\" />
   </ItemGroup>
 

@@ -1,5 +1,5 @@
 ﻿using FitfokusServer.Models.DomainObjects;
-using FitfokusServer.Models.MessageBoard;
+using FitfokusServer.Models.DomainObjects.MessageBoard;
 using Microsoft.EntityFrameworkCore;
 using System;
 
