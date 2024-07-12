@@ -1,6 +1,7 @@
 using FitfokusServer.Interfaces;
 using FitfokusServer.Models.DTOs.Requests;
 using FitfokusServer.Models.DTOs.Responses;
+using FitfokusServer.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,28 +12,42 @@ namespace FitfokusServer.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly IUserRepository _userRepository;
+    private readonly IUserService _userService;
 
 
-    public UserController(IUserRepository userRepository)
+    public UserController(IUserService userService)
     {
-        _userRepository = userRepository;
+        _userService = userService;
     }
 
-    // comment to see if CD is working OOB
 
     [HttpGet("{id}")]
     //   [Authorize (Roles ="user, admin, super-admin")  ]
     public async Task<ActionResult<GetUserResponseDTO>> GetUser(int id)
     {
-    //  if (!await _userRepository.UsersFound() || !await _userRepository.UserExists(id)){return NotFound("No user with that Id exists");}
+        try {
 
-          var getUser = await _userRepository.GetUser(new GetUserRequestDTO { Id = id });
-        
+            var getUser = await _userService.GetUser(new GetUserRequestDTO { Id = id });
 
-        var user = new GetUserResponseDTO(); //{ DummyResponse = getUser.UserResponse1 };
 
-      return Ok (user);
+
+            return Ok(getUser);
+            }
+        catch (InvalidOperationException ex)
+        {
+            // Hantera specifika undantag
+            return BadRequest(new { message = ex.Message });
+        }
+        catch (ApplicationException ex)
+        {
+            // Hantera applikationsspecifika undantag
+            return StatusCode(StatusCodes.Status500InternalServerError, new { message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            // Hantera alla andra undantag
+            return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An unexpected error occurred." });
+        }
     }
 
 
@@ -44,28 +59,28 @@ public class UserController : ControllerBase
 
     //    var user = _mapper.Map<User>(userCreateDTO);
 
-          var  user =   await _userRepository.CreateUser(createUserRequest);
+          var  user =   await _userService.CreateUser(createUserRequest);
     
         return CreatedAtAction("GetUser", new { id = user.Id }, user);
     }
 
 
-    [HttpDelete("{id}")]
-    [Authorize(Roles = "super-admin")]
-    public async Task<IActionResult> DeleteUser(int id)
-    {
-        if (!await _userRepository.UsersFound())
-        {
-            return Problem("No users found in the database");
-        }
-        var deleteUser = await _userRepository.DeleteUser(id);
+    //[HttpDelete("{id}")]
+    //[Authorize(Roles = "super-admin")]
+    //public async Task<IActionResult> DeleteUser(int id)
+    //{
+    //    if (!await _userRepository.UsersFound())
+    //    {
+    //        return Problem("No users found in the database");
+    //    }
+    //    var deleteUser = await _userRepository.DeleteUser(id);
 
-        if (!deleteUser)
-        {
-            return NotFound();
-        }
-        return NoContent();
+    //    if (!deleteUser)
+    //    {
+    //        return NotFound();
+    //    }
+    //    return NoContent();
 
-    }
+    //}
 
 }

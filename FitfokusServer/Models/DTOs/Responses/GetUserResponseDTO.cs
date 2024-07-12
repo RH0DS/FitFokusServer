@@ -1,6 +1,7 @@
 ﻿using FitfokusServer.Models.DomainObjects;
+using FitfokusServer.Models.DomainObjects.MessageBoard;
 using FitfokusServer.Models.DTOs.Requests;
-using FitfokusServer.Models.MessageBoard;
+
 
 namespace FitfokusServer.Models.DTOs.Responses;
     public class GetUserResponseDTO
@@ -14,5 +15,5 @@ namespace FitfokusServer.Models.DTOs.Responses;
     //Forum properties
     //public List<Topic>? Topics { get; set; }
     //public List<Message>? Messages { get; set; }
-    }
+}
 
